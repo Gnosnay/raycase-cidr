@@ -1,10 +1,14 @@
 import { ActionPanel, Detail, List, Action } from "@raycast/api";
+import { useState } from "react";
 
 interface CIDRArgument {
   cidrStr: string;
 }
 
-export default function Command() {
+export default function CIDRToIPRange(props: { arguments: CIDRArgument }) {
+  const { cidrStr } = props.arguments;
+  const [cidr, setCidr] = useState<string>(cidrStr);
+
   return (
     <List>
       <List.Item
