@@ -41,6 +41,9 @@ function validateNetworkInfo(str: string, is_cidr: boolean): Result<ValidRes, IP
         lastNum = lastNum == -1 ? num : lastNum * 10 + num;
     }
     const mask: Mask = lastNum;
+    if (!is_cidr) {
+        ipSections.push(lastNum);
+    }
 
     if (is_cidr && !hasMask) {
         return Err({
@@ -90,7 +93,7 @@ export function validateCIDR(str: string): Result<CIDR, IPValidationError> {
 }
 
 export function validateIPv4(str: string): Result<IPV4, IPValidationError> {
-    const res = validateNetworkInfo(str, true);
+    const res = validateNetworkInfo(str, false);
     if (res.ok) {
         return Ok(res.val as IPV4);
     }
