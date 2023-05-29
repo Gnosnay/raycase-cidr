@@ -20,7 +20,7 @@ export function validateCIDR(str: string): Result<CIDR, IPValidationError> {
             if (lastNum == -1) {
                 return Err({
                     kind: 'IP_VALIDATION_ERROR',
-                    msg: `echo section in ${str} should be one valid number`
+                    msg: `each section in ${str} should be one valid number`
                 });
             }
             ipSections.push(lastNum);
