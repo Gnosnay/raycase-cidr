@@ -8,7 +8,9 @@ type IPV4 = [number, number, number, number]
 type Mask = number
 type CIDR = [IPV4, Mask]
 
-export function validateCIDR(str: string): Result<CIDR, IPValidationError> {
+type ValidRes = IPV4 | CIDR
+
+function validateNetworkInfo(str: string, is_cidr: boolean): Result<ValidRes, IPValidationError> {
     const ipSections: number[] = [];
 
     let lastNum = -1;
@@ -40,12 +42,20 @@ export function validateCIDR(str: string): Result<CIDR, IPValidationError> {
     }
     const mask: Mask = lastNum;
 
-    if (!hasMask) {
+    if (is_cidr && !hasMask) {
         return Err({
             kind: 'IP_VALIDATION_ERROR',
             msg: `${str} should contain mask part`
         });
     }
+
+    if (!is_cidr && hasMask) {
+        return Err({
+            kind: 'IP_VALIDATION_ERROR',
+            msg: `${str} should not contain mask part`
+        });
+    }
+
     if (ipSections.length != 4) {
         return Err({
             kind: 'IP_VALIDATION_ERROR',
@@ -58,15 +68,31 @@ export function validateCIDR(str: string): Result<CIDR, IPValidationError> {
             msg: `each part in ${str} should between 0-255`
         });
     }
-    if (mask <= 0 || mask > 32) {
+    if (is_cidr && (mask <= 0 || mask > 32)) {
         return Err({
             kind: 'IP_VALIDATION_ERROR',
             msg: `mask in ${str} shuold between 1-32`
         });
     }
+    const ipv4: [number, number, number, number,] = [
+        ipSections[0], ipSections[1], ipSections[2], ipSections[3]
+    ]
 
-    return Ok([
-        [ipSections[0], ipSections[1], ipSections[2], ipSections[3]],
-        mask
-    ]);
+    return Ok(is_cidr ? [ipv4, mask] : ipv4);
+}
+
+export function validateCIDR(str: string): Result<CIDR, IPValidationError> {
+    const res = validateNetworkInfo(str, true);
+    if (res.ok) {
+        return Ok(res.val as CIDR);
+    }
+    return res
+}
+
+export function validateIPv4(str: string): Result<IPV4, IPValidationError> {
+    const res = validateNetworkInfo(str, true);
+    if (res.ok) {
+        return Ok(res.val as IPV4);
+    }
+    return res
 }
