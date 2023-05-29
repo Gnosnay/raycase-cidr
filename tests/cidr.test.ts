@@ -1,4 +1,4 @@
-import { validateCIDR } from '../src/utils/common-utils';
+import { validateCIDR } from '../src/utils/validation-utils';
 
 describe('cidr validation', function () {
     it('10.0.0.0/24', function () {

@@ -1,4 +1,4 @@
-import { validateIPv4 } from '../src/utils/common-utils';
+import { validateIPv4 } from '../src/utils/validation-utils';
 
 describe('ip validation', function () {
     it('10.0.0.0', function () {

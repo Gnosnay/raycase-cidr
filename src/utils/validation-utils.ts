@@ -1,12 +1,8 @@
-import { Ok, Err, Result } from 'ts-results';
+import { Ok, Err, Result } from 'ts-results-es';
 
 export const isEmpty = (string: string | null | undefined) => {
     return !(string != null && String(string).length > 0);
 };
-
-type IPV4 = [number, number, number, number]
-type Mask = number
-type CIDR = [IPV4, Mask]
 
 type ValidRes = IPV4 | CIDR
 
