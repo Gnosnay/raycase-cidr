@@ -1,0 +1,202 @@
+[
+  {
+    "cidr_range": "10.0.0.0/24",
+    "netmask": "255.255.255.0",
+    "wildcard_bits": "0.0.0.255",
+    "total_host": 256,
+    "first_ip": "10.0.0.0",
+    "first_ip_int": 167772160,
+    "last_ip": "10.0.0.255",
+    "last_ip_int": 167772415
+  },
+  {
+    "cidr_range": "192.168.0.0/16",
+    "netmask": "255.255.0.0",
+    "wildcard_bits": "0.0.255.255",
+    "total_host": 65536,
+    "first_ip": "192.168.0.0",
+    "first_ip_int": 3232235520,
+    "last_ip": "192.168.255.255",
+    "last_ip_int": 3232301055
+  },
+  {
+    "cidr_range": "172.16.0.0/12",
+    "netmask": "255.240.0.0",
+    "wildcard_bits": "0.15.255.255",
+    "total_host": 1048576,
+    "first_ip": "172.16.0.0",
+    "first_ip_int": 2886729728,
+    "last_ip": "172.31.255.255",
+    "last_ip_int": 2887778303
+  },
+  {
+    "cidr_range": "10.10.0.0/16",
+    "netmask": "255.255.0.0",
+    "wildcard_bits": "0.0.255.255",
+    "total_host": 65536,
+    "first_ip": "10.10.0.0",
+    "first_ip_int": 168427520,
+    "last_ip": "10.10.255.255",
+    "last_ip_int": 168493055
+  },
+  {
+    "cidr_range": "192.0.2.0/24",
+    "netmask": "255.255.255.0",
+    "wildcard_bits": "0.0.0.255",
+    "total_host": 256,
+    "first_ip": "192.0.2.0",
+    "first_ip_int": 3221225984,
+    "last_ip": "192.0.2.255",
+    "last_ip_int": 3221226239
+  },
+  {
+    "cidr_range": "203.0.113.0/24",
+    "netmask": "255.255.255.0",
+    "wildcard_bits": "0.0.0.255",
+    "total_host": 256,
+    "first_ip": "203.0.113.0",
+    "first_ip_int": 3405803776,
+    "last_ip": "203.0.113.255",
+    "last_ip_int": 3405804031
+  },
+  {
+    "cidr_range": "198.51.100.0/24",
+    "netmask": "255.255.255.0",
+    "wildcard_bits": "0.0.0.255",
+    "total_host": 256,
+    "first_ip": "198.51.100.0",
+    "first_ip_int": 3325256704,
+    "last_ip": "198.51.100.255",
+    "last_ip_int": 3325256959
+  },
+  {
+    "cidr_range": "172.18.0.0/16",
+    "netmask": "255.255.0.0",
+    "wildcard_bits": "0.0.255.255",
+    "total_host": 65536,
+    "first_ip": "172.18.0.0",
+    "first_ip_int": 2886860800,
+    "last_ip": "172.18.255.255",
+    "last_ip_int": 2886926335
+  },
+  {
+    "cidr_range": "10.20.30.0/24",
+    "netmask": "255.255.255.0",
+    "wildcard_bits": "0.0.0.255",
+    "total_host": 256,
+    "first_ip": "10.20.30.0",
+    "first_ip_int": 169090560,
+    "last_ip": "10.20.30.255",
+    "last_ip_int": 169090815
+  },
+  {
+    "cidr_range": "192.168.1.0/24",
+    "netmask": "255.255.255.0",
+    "wildcard_bits": "0.0.0.255",
+    "total_host": 256,
+    "first_ip": "192.168.1.0",
+    "first_ip_int": 3232235776,
+    "last_ip": "192.168.1.255",
+    "last_ip_int": 3232236031
+  },
+  {
+    "cidr_range": "172.31.0.0/16",
+    "netmask": "255.255.0.0",
+    "wildcard_bits": "0.0.255.255",
+    "total_host": 65536,
+    "first_ip": "172.31.0.0",
+    "first_ip_int": 2887712768,
+    "last_ip": "172.31.255.255",
+    "last_ip_int": 2887778303
+  },
+  {
+    "cidr_range": "10.100.0.0/16",
+    "netmask": "255.255.0.0",
+    "wildcard_bits": "0.0.255.255",
+    "total_host": 65536,
+    "first_ip": "10.100.0.0",
+    "first_ip_int": 174325760,
+    "last_ip": "10.100.255.255",
+    "last_ip_int": 174391295
+  },
+  {
+    "cidr_range": "203.0.123.0/24",
+    "netmask": "255.255.255.0",
+    "wildcard_bits": "0.0.0.255",
+    "total_host": 256,
+    "first_ip": "203.0.123.0",
+    "first_ip_int": 3405806336,
+    "last_ip": "203.0.123.255",
+    "last_ip_int": 3405806591
+  },
+  {
+    "cidr_range": "198.18.0.0/15",
+    "netmask": "255.254.0.0",
+    "wildcard_bits": "0.1.255.255",
+    "total_host": 131072,
+    "first_ip": "198.18.0.0",
+    "first_ip_int": 3323068416,
+    "last_ip": "198.19.255.255",
+    "last_ip_int": 3323199487
+  },
+  {
+    "cidr_range": "172.19.0.0/16",
+    "netmask": "255.255.0.0",
+    "wildcard_bits": "0.0.255.255",
+    "total_host": 65536,
+    "first_ip": "172.19.0.0",
+    "first_ip_int": 2886926336,
+    "last_ip": "172.19.255.255",
+    "last_ip_int": 2886991871
+  },
+  {
+    "cidr_range": "10.50.0.0/16",
+    "netmask": "255.255.0.0",
+    "wildcard_bits": "0.0.255.255",
+    "total_host": 65536,
+    "first_ip": "10.50.0.0",
+    "first_ip_int": 171048960,
+    "last_ip": "10.50.255.255",
+    "last_ip_int": 171114495
+  },
+  {
+    "cidr_range": "192.168.2.0/24",
+    "netmask": "255.255.255.0",
+    "wildcard_bits": "0.0.0.255",
+    "total_host": 256,
+    "first_ip": "192.168.2.0",
+    "first_ip_int": 3232236032,
+    "last_ip": "192.168.2.255",
+    "last_ip_int": 3232236287
+  },
+  {
+    "cidr_range": "172.17.0.0/16",
+    "netmask": "255.255.0.0",
+    "wildcard_bits": "0.0.255.255",
+    "total_host": 65536,
+    "first_ip": "172.17.0.0",
+    "first_ip_int": 2886795264,
+    "last_ip": "172.17.255.255",
+    "last_ip_int": 2886860799
+  },
+  {
+    "cidr_range": "10.200.0.0/16",
+    "netmask": "255.255.0.0",
+    "wildcard_bits": "0.0.255.255",
+    "total_host": 65536,
+    "first_ip": "10.200.0.0",
+    "first_ip_int": 180879360,
+    "last_ip": "10.200.255.255",
+    "last_ip_int": 180944895
+  },
+  {
+    "cidr_range": "192.168.3.0/24",
+    "netmask": "255.255.255.0",
+    "wildcard_bits": "0.0.0.255",
+    "total_host": 256,
+    "first_ip": "192.168.3.0",
+    "first_ip_int": 3232236288,
+    "last_ip": "192.168.3.255",
+    "last_ip_int": 3232236543
+  }
+]
