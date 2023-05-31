@@ -1,3 +1,5 @@
+import { CIDR } from "./constants";
+
 export type CIDRDetail = {
     range: string,
     netmask: string,

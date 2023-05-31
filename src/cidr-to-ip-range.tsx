@@ -3,6 +3,7 @@ import { useState } from "react";
 import { IpEmptyView } from "./components/ip-empty-view";
 import { isEmpty, validateCIDR } from "./utils/validation-utils";
 import { splitCIDR, CIDRDetail } from "./utils/cidr-utils";
+import { PANEL_MAPPINGS } from "./utils/constants";
 
 interface CIDRArgument {
   cidrStr: string;
@@ -31,9 +32,18 @@ export default function CIDRToIPRange(props: { arguments: CIDRArgument }) {
               ([key, value], index) => {
                 return <List.Item
                   key={index}
-                  // icon={listIcons[index]}
-                  title={key}
+                  icon={PANEL_MAPPINGS[key].icon}
+                  title={PANEL_MAPPINGS[key].itemName}
                   subtitle={`${value}`}
+                  actions={
+                    <ActionPanel>
+                      <Action.CopyToClipboard icon={PANEL_MAPPINGS[key].icon} title={`Copy ${PANEL_MAPPINGS[key].itemName}`} content={`${value}`} />
+                      <Action.CopyToClipboard
+                        title="Copy All Info"
+                        content={JSON.stringify(splitCIDR(res.val))}
+                      />
+                    </ActionPanel>
+                  }
                 />
               }
             )

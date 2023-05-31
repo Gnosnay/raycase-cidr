@@ -1,4 +1,5 @@
 import { Ok, Err, Result } from 'ts-results-es';
+import { IPV4, CIDR, IPValidationError, Mask } from './constants';
 
 export const isEmpty = (string: string | null | undefined) => {
     return !(string != null && String(string).length > 0);
