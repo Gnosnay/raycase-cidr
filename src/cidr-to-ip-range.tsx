@@ -1,4 +1,4 @@
-import { ActionPanel, Detail, List, Action } from "@raycast/api";
+import { ActionPanel, List, Action } from "@raycast/api";
 import { useState } from "react";
 import { IpEmptyView } from "./components/ip-empty-view";
 import { isEmpty, validateCIDR } from "./utils/validation-utils";
