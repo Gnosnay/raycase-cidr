@@ -30,19 +30,19 @@ export function splitCIDR(cidr: CIDR): CIDRDetail {
 
     const ipInt = ip.reduce((prev, curr) => (prev << 8) + curr, 0)
 
-    const firstIp = ipInt & netmask;
-    const lastIp = wildcard | firstIp;
+    // just in case, coerce to Uint32
+    const firstIp = (ipInt & netmask) >>> 0;
+    // just in case, coerce to Uint32
+    const lastIp = (wildcard | firstIp) >>> 0;
 
     return {
         range: range,
         netmask: intToIPv4(netmask),
         wildcardBits: intToIPv4(wildcard),
         firstIp: intToIPv4(firstIp),
-        // just in case, coerce to Uint32
-        firstIpInt: firstIp >>> 0,
+        firstIpInt: firstIp,
         lastIp: intToIPv4(lastIp),
-        // just in case, coerce to Uint32
-        lastIpInt: lastIp >>> 0,
+        lastIpInt: lastIp,
         totalHost: lastIp - firstIp + 1,
     }
 }
