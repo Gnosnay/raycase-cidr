@@ -26,12 +26,11 @@ export function splitCIDR(cidr: CIDR): CIDRDetail {
 
     const wildcard = (0x1 << (32 - maskInt)) - 1;
     const mask32 = 0xffffffff;
-    const netmask = (~wildcard) & 0xffffffff;
+    const netmask = (~wildcard) & mask32;
 
     const ipInt = ip.reduce((prev, curr) => (prev << 8) + curr, 0)
 
     const firstIp = ipInt & netmask;
-
     const lastIp = wildcard | firstIp;
 
     return {
@@ -39,9 +38,11 @@ export function splitCIDR(cidr: CIDR): CIDRDetail {
         netmask: intToIPv4(netmask),
         wildcardBits: intToIPv4(wildcard),
         firstIp: intToIPv4(firstIp),
-        firstIpInt: firstIp,
+        // just in case, coerce to Uint32
+        firstIpInt: firstIp >>> 0,
         lastIp: intToIPv4(lastIp),
-        lastIpInt: lastIp,
+        // just in case, coerce to Uint32
+        lastIpInt: lastIp >>> 0,
         totalHost: lastIp - firstIp + 1,
     }
 }
