@@ -1,5 +1,7 @@
 # CIDR to IPv4 info
 
+![preview](./assets/screenshot.png)
+
 ### description
 
 Input one CIDR string, and it will help you convert it to more detailed info.
