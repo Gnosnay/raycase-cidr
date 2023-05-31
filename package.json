@@ -13,7 +13,7 @@
   "commands": [
     {
       "name": "cidr-to-ip-range",
-      "title": "CIDR to IP Range",
+      "title": "Convert CIDR to IP Range",
       "description": "CIDR to IPv4 Conversion",
       "mode": "view",
       "arguments": [
