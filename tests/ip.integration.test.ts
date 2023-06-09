@@ -666,4 +666,14 @@ describe("ip range to cidr", function () {
 
     ])
   });
+
+  it("[0, 0, 0, 0], [10, 0, 0, 255]", function () {
+    const res = ipRangeToCIDR([0, 0, 0, 0], [10, 0, 0, 255]);
+    expect(res.ok).toBe(true);
+    expect(res.val).toEqual([
+      [[0, 0, 0, 0], 5],
+      [[8, 0, 0, 0], 7],
+      [[10, 0, 0, 0], 24],
+    ])
+  });
 });

@@ -63,8 +63,15 @@ export function ipRangeToCIDR(ip1: IPV4, ip2: IPV4): Result<CIDR[], RangeConvert
 
   while (ptrIP <= rightIP) {
     let step = ptrIP & -ptrIP;
+    if (step == 0) {
+      // special case for 0.0.0.0
+      step = 1;
+      while (step < amount) {
+        step = step << 1;
+      }
+    }
     while (step > amount) {
-      step--;
+      step >>= 1;
     }
     res.push([intToIPv4Type(ptrIP), 32 - Math.log2(step)])
     ptrIP += step;
