@@ -1,4 +1,4 @@
-import { ipRangeToCIDR, splitCIDR } from "../src/utils/cidr-utils";
+import { ipRangeToCIDR } from "../src/utils/cidr-utils";
 
 describe("ip range to cidr", function () {
   it("[10, 0, 0, 1], [10, 0, 0, 255]", function () {
