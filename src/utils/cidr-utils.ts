@@ -48,15 +48,14 @@ export function splitCIDR(cidr: CIDR): CIDRDetail {
   };
 }
 
-
 export function ipRangeToCIDR(ip1: IPV4, ip2: IPV4): Result<CIDR[], RangeConvertError> {
   const leftIP = ((ip1[0] << 24) + (ip1[1] << 16) + (ip1[2] << 8) + ip1[3]) >>> 0;
   const rightIP = ((ip2[0] << 24) + (ip2[1] << 16) + (ip2[2] << 8) + ip2[3]) >>> 0;
 
   if (leftIP > rightIP) {
-    return Err({ kind: 'IP_RANGE_FAILED_TO_CIDR_ERROR', msg: "Invalid IP range" })
+    return Err({ kind: "IP_RANGE_FAILED_TO_CIDR_ERROR", msg: "Invalid IP range" });
   }
-  const res: CIDR[] = []
+  const res: CIDR[] = [];
 
   let amount = rightIP - leftIP + 1;
   let ptrIP = leftIP;
@@ -73,7 +72,7 @@ export function ipRangeToCIDR(ip1: IPV4, ip2: IPV4): Result<CIDR[], RangeConvert
     while (step > amount) {
       step >>= 1;
     }
-    res.push([intToIPv4Type(ptrIP), 32 - Math.log2(step)])
+    res.push([intToIPv4Type(ptrIP), 32 - Math.log2(step)]);
     ptrIP += step;
     amount -= step;
   }

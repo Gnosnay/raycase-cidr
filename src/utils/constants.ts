@@ -12,8 +12,8 @@ export interface IPValidationError {
 }
 
 export interface RangeConvertError {
-  kind: "IP_RANGE_FAILED_TO_CIDR_ERROR"
-  msg: string
+  kind: "IP_RANGE_FAILED_TO_CIDR_ERROR";
+  msg: string;
 }
 
 type panelMapping = {
