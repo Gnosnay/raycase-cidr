@@ -27,10 +27,10 @@ output:
 | `lastIpInt`    | `167772415`     |
 | `totalHost`    | `256`           |
 
-
 ### Convert IP range to CIDR
 
-input: 
+input:
+
 - `10.0.0.0`
 - `10.0.0.255`
 

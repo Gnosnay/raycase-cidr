@@ -7,9 +7,9 @@ import { ipRangeToCIDR } from "./utils/cidr-utils";
 
 function renderResultToMarkdown(res: CIDR[]): string {
   return `## Result:\n${res.reduce((a, b) => {
-    const [[p1, p2, p3, p4], mask] = b
-    return `${a}\n- ${p1}.${p2}.${p3}.${p4}/${mask}`
-  }, "")}`
+    const [[p1, p2, p3, p4], mask] = b;
+    return `${a}\n- ${p1}.${p2}.${p3}.${p4}/${mask}`;
+  }, "")}`;
 }
 
 export default function IPRangeToCIDR() {
@@ -33,20 +33,26 @@ export default function IPRangeToCIDR() {
     <Form
       actions={
         <ActionPanel>
-          <Action.SubmitForm title="Calculate" onSubmit={(values) => {
-            const cidrRes = ipRangeToCIDR(values['beginIPField'], values['endIPField'])
-            push(
-              cidrRes.ok ?
-                <Detail markdown={renderResultToMarkdown(cidrRes.val)}
-                  actions={
-                    <ActionPanel>
-                      <Action.CopyToClipboard title="Copy Result" content={renderResultToMarkdown(cidrRes.val)} />
-                    </ActionPanel>
-                  }
-                /> :
-                <Detail markdown={`${cidrRes.val.msg}`} />
-            )
-          }} />
+          <Action.SubmitForm
+            title="Calculate"
+            onSubmit={(values) => {
+              const cidrRes = ipRangeToCIDR(values["beginIPField"], values["endIPField"]);
+              push(
+                cidrRes.ok ? (
+                  <Detail
+                    markdown={renderResultToMarkdown(cidrRes.val)}
+                    actions={
+                      <ActionPanel>
+                        <Action.CopyToClipboard title="Copy Result" content={renderResultToMarkdown(cidrRes.val)} />
+                      </ActionPanel>
+                    }
+                  />
+                ) : (
+                  <Detail markdown={`${cidrRes.val.msg}`} />
+                )
+              );
+            }}
+          />
         </ActionPanel>
       }
     >
