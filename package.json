@@ -24,6 +24,12 @@
           "required": false
         }
       ]
+    },
+    {
+      "name": "ip-range-to-cidr",
+      "title": "Convert IP Range to CIDR",
+      "description": "IPv4 to CIDR Conversion",
+      "mode": "view"
     }
   ],
   "dependencies": {
